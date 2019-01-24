@@ -3,7 +3,7 @@
   
   Dice Blackjack
   Created: 15-01-2019
-  Last Updated: 17-01-2019
+  Last Updated: 23-01-2019
 */
 
 /********
@@ -14,9 +14,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
 }
 
+.clearfix2,
 .clearfix::after {
     content: "";
     display: table;
@@ -45,6 +45,12 @@ body {
     overflow: hidden;
 }
 
+.scores-panel,
+.settings-panel {
+    width: 100%;
+    float: left;
+    height: 600px;
+}
 .player-0-panel,
 .player-1-panel {
     width: 50%;
@@ -90,6 +96,20 @@ body {
     font-weight: 100;
     color: #EB4D4D;
     margin-bottom: 130px;
+}
+
+.dark { background-color: #33333D; }
+
+.active-dark { background-color:  #37373F; }
+.active-dark .player-name { font-weight: 300; }
+
+.active-dark .player-name::after {
+    content: "\2022";
+    font-size: 47px;
+    position: absolute;
+    color: #D79921;
+    top: -7px;
+    right: 10px;
 }
 
 .active { background-color: #f7f7f7; }
@@ -148,6 +168,28 @@ button:focus {
     outline: none;
 }
 
+a {
+    position: absolute;
+    width: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #555;
+    background: none;
+    border: none;
+    font-family: Lato;
+    font-size: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 300;
+    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none;
+}
+
+a:hover { font-weight: 600; }
+a::hover i { margin-right: 20px; }
+
+a:focus { outline: none; }
+
 i {
     color: #EB4D4D;
     display: inline-block;
@@ -162,6 +204,58 @@ i {
 .btn-new { top: 45px;}
 .btn-roll { top: 403px;}
 .btn-hold { top: 467px;}
+.btn-settings {
+    top: 45px;
+    left: 90%;
+}
+.btn-hiscore {
+    top: 45px;
+    left: 10%;
+}
+.btn-back-1,
+.btn-back {
+    top: 45px;
+    left: 10%;
+}
+.btn-dark {
+    top: 40%;
+    left: 25%;
+}
+.btn-resetHighScore {
+    top: 55%;
+    left: 24.8%;
+}
+.btn-gameMode {
+    top: 40%;
+    left: 74%;
+}
+
+.game-mode-0 {
+    font-size: 15px;
+    top: 50%;
+    left: 75%;
+}
+.game-mode-1 {
+    font-size: 15px;
+    top: 57.5%;
+    left: 75%;
+}
+.game-mode-2 {
+    font-size: 15px;
+    top: 64%;
+    left: 75%;
+}
+.scores-title,
+.settings-title {
+    font-size: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 300;
+    margin-top: 35px;
+    margin-bottom: 10px;
+    position: relative;
+}
 
 .dice {
     position: absolute;
@@ -174,3 +268,6 @@ i {
 
 .winner { background-color: #f7f7f7; }
 .winner .player-name { font-weight: 300; color: #EB4D4D; }
+
+.winner-dark { background-color: #37373F; }
+.winner-dark .player-name { font-weight: 300; color: #D79921; }
