@@ -1,10 +1,10 @@
-<!------------------------------------
+<!-----------------------------------------------
   Game HTML by Christian Smith Mantas.
-  With ♥ from: Iifizy- 
+  With ♥ from: Iifizy- / Nellogy / mentaltroll135
   
   Dice Blackjack
   Created: 15-01-2019
-  Last Updated: 17-01-2019
+  Last Updated: 23-01-2019
 -->
 
 <!DOCTYPE html>
@@ -13,17 +13,22 @@
         <meta charset="UTF-8">
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,600" rel="stylesheet" type="text/css">
         <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+        
+        <link href="https://unpkg.com/ionicons@4.5.1/dist/css/ionicons.min.css" rel="stylesheet">
         <link type="text/css" rel="stylesheet" href="style.css">
         
-        <title>Dice Blackjack</title>
+        <title id="tabTitle">Dice Blackjack</title>
     </head>
 
     <body>
         <div class="wrapper clearfix">
+            
+            <!-- Game screen / tab -->
+            <div class="game-panel">
             <div class="player-0-panel active">
                 <div class="player-name" id="name-0">Player 1</div>
                 <div class="player-score" id="score-0">43</div>
-                <div class="player-current-box">
+                <div class="player-current-box" id="currentBox-0">
                     <div class="player-current-label">Current</div>
                     <div class="player-current-score" id="current-0">11</div>
                 </div>
@@ -32,7 +37,7 @@
             <div class="player-1-panel">
                 <div class="player-name" id="name-1">Player 2</div>
                 <div class="player-score" id="score-1">72</div>
-                <div class="player-current-box">
+                <div class="player-current-box" id="currentBox-1">
                     <div class="player-current-label">Current</div>
                     <div class="player-current-score" id="current-1">0</div>
                 </div>
@@ -41,15 +46,50 @@
             <div class='comment-panel'>                            
             </div>
             
-            <button class="btn-new"><i class="ion-ios-plus-outline"></i>New game</button>
-            <button class="btn-roll"><i class="ion-ios-loop"></i>Roll dice</button>
-            <button class="btn-hold"><i class="ion-ios-download-outline"></i>Hold</button>
+            <button class="btn-new" id="buttonNew"><i class="ion-ios-plus-outline" id="icnNewGame"></i>New game</button>
+            
+            <button class="btn-settings" id="buttonSettings"><i class="ion-ios-settings" id="icnSettings"></i>Settings</button>
+            
+            <button class="btn-roll" id="buttonRoll"><i class="ion-ios-loop" id="icnRoll"></i>Roll dice</button>
+            <button class="btn-hold" id="buttonHold"><i class="ion-ios-download-outline" id="icnHold"></i>Hold</button>
+                <button class="btn-hiscore" id="itemHi">Hi-Score</button>
             
             <input type="text" placeholder="Select Score" class="final-score">
             
             <img src="dice-5.png" alt="Dice" class="dice">
-        </div>
-        
+            </div>
+            
+            
+            <!-- Settings screen / tab -->
+            <div class="settings-panel">
+                <div class="settings-title" id="title-1">Settings</div>
+                
+                <button class="game-mode-0" id="mode-0">Normal</button>
+                
+                <button class="game-mode-1" id="mode-1">Extreme</button>
+                
+                <button class="game-mode-2" id="mode-2">Competitive</button>
+                
+                <button class="btn-back" id="buttonBack-0"><i class="ion-ios-arrow-back" id="icnReturn-0"></i>Back</button>
+                
+                <button class="btn-dark" id="buttonDL"><i class="ion-ios-moon" id="icnUI"></i>Dark Mode</button>
+                
+                <button class="btn-resetHighScore" id="buttonReset"><i class="ion-ios-ribbon" id="icnReset"></i>Hi-Score</button> 
+                
+                <button class="btn-gameMode" id="buttonMode"><i class="ion-ios-cube" id="icnMode"></i>Game Mode</button>
+            </div>
+            
+            
+            <!-- Scores screen / tab -->
+            <div class="scores-panel">
+                <div class="scores-title" id="title-2">High Scores</div>
+                
+                <button class="btn-back-1" id="buttonBack-1"><i class="ion-ios-arrow-back" id="icnReturn-1"></i>Back</button>
+                
+                <H1 style="margin-right: 30%; margin-left: 27.5%; margin-top: 10%;">1.<span style="float:right;" >first score record</span></H1>
+            </div>
+            
+        </div>         
         <script src="app.js"></script>
     </body>
 </html>
